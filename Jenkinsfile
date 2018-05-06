@@ -1,8 +1,13 @@
 pipeline {
   agent any
+
   environment {
     target_cluster = '10.65.173.162'
   }
+  triggers {
+        cron('H */4 * * 1-5')
+  }
+
   stages {
     stage('installation') {
       steps {
